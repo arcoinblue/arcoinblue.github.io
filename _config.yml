@@ -1,0 +1,31 @@
+# ---- Edit these ----
+title: My Blog
+description: Notes, thoughts, and things I've learned.
+author: Your Name
+url: "https://yourusername.github.io"   # your GitHub Pages address
+baseurl: ""                              # leave empty for a yourusername.github.io repo
+
+# ---- Settings (you can leave these alone) ----
+timezone: Asia/Seoul
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed      # RSS feed at /feed.xml
+  - jekyll-seo-tag   # nice previews when links are shared
+  - jekyll-sitemap   # helps search engines find your posts
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

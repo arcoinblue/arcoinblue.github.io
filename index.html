@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% assign latest = site.posts.first %}
+{% if latest %}
+  {% include post-body.html post=latest link=true %}
+
+  {% if site.posts.size > 1 %}
+  <section class="more">
+    <h2>Earlier posts</h2>
+    <ul class="post-list">
+      {% for post in site.posts offset:1 limit:5 %}
+        <li>
+          <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/posts/' | relative_url }}">See all posts →</a></p>
+  </section>
+  {% endif %}
+{% else %}
+  <p>No posts yet. Add one to the <code>_posts</code> folder.</p>
+{% endif %}

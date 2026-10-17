@@ -1,0 +1,17 @@
+---
+layout: page
+title: Categories
+permalink: /categories/
+---
+{% assign cats = site.categories | sort %}
+{% for cat in cats %}
+  <h2 class="year" id="{{ cat[0] | slugify }}">{{ cat[0] }}</h2>
+  <ul class="post-list">
+    {% for post in cat[1] %}
+      <li>
+        <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
