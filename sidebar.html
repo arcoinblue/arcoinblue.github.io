@@ -1,0 +1,30 @@
+<aside class="sidebar">
+  <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  <p class="site-desc">{{ site.description }}</p>
+
+  <nav class="nav">
+    <a href="{{ '/' | relative_url }}">Latest</a>
+    <a href="{{ '/posts/' | relative_url }}">All posts</a>
+    <a href="{{ '/about/' | relative_url }}">About</a>
+  </nav>
+
+  {% if site.categories.size > 0 %}
+  <h2 class="side-heading">Categories</h2>
+  <ul class="cat-list">
+    {% assign cats = site.categories | sort %}
+    {% for cat in cats %}
+      <li>
+        <a href="{{ '/categories/' | relative_url }}#{{ cat[0] | slugify }}">{{ cat[0] }}</a>
+        <span class="count">{{ cat[1].size }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <h2 class="side-heading">Recent</h2>
+  <ul class="recent-list">
+    {% for post in site.posts limit:5 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>
