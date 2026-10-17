@@ -4,9 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm **Your Name**. This is where I write about things I'm learning and thinking about.
+ARCO
 
-- GitHub: [yourusername](https://github.com/yourusername)
-- Email: you@example.com
+- GitHub: [arcoinblue](https://github.com/arcoinblue)
+- Email: inblue0725 (at) gmail (dot) com
 
-*(Edit this page in `about.md`.)*
